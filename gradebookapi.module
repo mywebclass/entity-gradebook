@@ -842,7 +842,7 @@ function gradebookapi_node_insert($node) {
 
     if (_gradebookapi_usedateapi()) {
       $node->gradebookapi['publish_date'] = _gradebookapi_datepopup2unixtime($node->gradebookapi['publish_date']);
-      $node->gradebookapi['due_date'] = _gradebookapi_datepopup2unixtime($node->gradebookap['due_date']);
+      $node->gradebookapi['due_date'] = _gradebookapi_datepopup2unixtime($node->gradebookapi['due_date']);
     }
     else {
       $node->gradebookapi['publish_date'] = _gradebookapi_drupaldate2unixtime($node->gradebookapi['publish_date']);
@@ -885,7 +885,7 @@ function gradebookapi_node_update($node) {
 
     if (_gradebookapi_usedateapi()) {
       $node->gradebookapi['publish_date'] = _gradebookapi_datepopup2unixtime($node->gradebookapi['publish_date']);
-      $node->gradebookapi['due_date'] = _gradebookapi_datepopup2unixtime($node->gradebookap['due_date']);
+      $node->gradebookapi['due_date'] = _gradebookapi_datepopup2unixtime($node->gradebookapi['due_date']);
     }
     else {
       $node->gradebookapi['publish_date'] = _gradebookapi_drupaldate2unixtime($node->gradebookapi['publish_date']);
