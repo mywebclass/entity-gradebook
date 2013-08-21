@@ -13,7 +13,9 @@ function gradebook_download_form($form, &$form_state, $gradebook) {
 
   $form['#gradebook'] = $gradebook;
   $options = gradebook_export_pages();
-  $default = array_shift(array_keys($options));
+  $default = array_keys($options);
+  $default = array_shift($default);
+  
   $form['func'] = array(
     '#type' => 'radios',
     '#title' => t('Page to Export'),
