@@ -528,7 +528,7 @@ function gradebook_scales_node_view($node, $view_mode, $langcode) {
  */
 function gradebook_scales_node_insert($node) {
     return;
-  if (in_array($node->type, (array) gradebookapi_get_assignment_types())) {
+  /*if (in_array($node->type, (array) gradebookapi_get_assignment_types())) {
     $sid = ($node->gradebookapi['sid'] == 'none' || $node->gradebookapi['sid'] === NULL) ? NULL : (int) $node->gradebookapi['sid'];
     db_insert('gradebookapi_assignment')
     ->fields(array(
@@ -536,7 +536,7 @@ function gradebook_scales_node_insert($node) {
       'sid' => $sid,
       ))
     ->execute();
-  }
+  }*/
 }
 
 /**
