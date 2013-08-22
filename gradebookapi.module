@@ -1352,8 +1352,9 @@ function gradebookapi_cron() {
   $types = (array)gradebookapi_get_assignment_types();
   $the_time = REQUEST_TIME;
   // Mark ready assignments as published.
-  $nids = db_select('gradebookapi_assignment', 'n')->fields('n', array('nid'))->condition('publish_date', $the_time, '<=')->execute()->fetchAll();
+  $nids = db_select('gradebookapi_assignment', 'n')->fields('n', array('nid'))->condition('publish_date', $the_time, '<=')->execute()->fetchAllAssoc('nid');
   if (!empty($nids)) {
+    $nids = array_keys($nids);
     db_update('node')->fields(array('status' => 1))->condition('type', $types, 'IN')->condition('status', 0)->condition('nid', $nids, 'IN')->execute();
   }
 }
